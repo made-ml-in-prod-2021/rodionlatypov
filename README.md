@@ -9,7 +9,7 @@ python train_pipeline.py <train-config-path>
 ### Predict with model
 
 ```bash
-python src/predict_pipeline.py <predict-config-path>
+python predict_pipeline.py <predict-config-path>
 ```
 
 
