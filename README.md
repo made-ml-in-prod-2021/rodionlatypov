@@ -1,2 +1,1 @@
-# ML project Homework 2
-
+# ML Homework 2: online inference
