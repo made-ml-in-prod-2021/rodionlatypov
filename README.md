@@ -6,7 +6,7 @@ docker pull rodionlatypov/online-inference:latest
 ```
 ### Running inference
 ```bash
-docker run -p 8000:8000 rodionlatypov/online-inference
+docker run -p 8000:8000 rodionlatypov/online-inference:latest
 ```
 ## Project structure
 ------------
@@ -84,7 +84,14 @@ Cм. /test/test_app.py. Покрытие тестами 87%:
 
 #### 7) Опубликуйте образ в https://hub.docker.com/ (2/2)
 
+https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated
+
 #### 8) Напишите в readme корректные команды docker pull/run, которые должны привести к тому, что локально поднимется на inference ваша модель (1/1)
+
+```bash
+docker pull rodionlatypov/online-inference:latest
+docker run -p 8000:8000 rodionlatypov/online-inference:latest
+```
 
 #### 9) Проведите самооценку (1/1)
 
