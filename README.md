@@ -56,7 +56,15 @@ Cм. /test/test_app.py. Покрытие тестами 87%:
 
 3) Напишите скрипт, который будет делать запросы к вашему сервису (2/2)
 
+См. make_request.py. Пример:
+
+![Make requests](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/requests.jpg)
+
 4) Сделайте валидацию входных данных (3/3)
+
+См. /validation/validate.py. Пример:
+
+![Validation](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/post_predict_validation.jpg)
 
 5) Напишите dockerfile, соберите на его основе образ и запустите локально контейнер(docker build, docker run), внутри контейнера должен запускать сервис, написанный в предущем пункте, закоммитьте его, напишите в readme корректную команду сборки (4/4)
 
