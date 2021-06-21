@@ -42,7 +42,17 @@ docker run -p 8000:8000 rodionlatypov/online-inference
 
 1) Оберните inference вашей модели в rest сервис (3/3)
 
+См. /app.py
+
+Пример запроса к сервиса и ответа, запущенному локально, ответ (предсказания модели) в нижнем правом углу:
+
+![Post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/post_predict.jpg)
+
 2) Напишите тест для /predict  (3/3)
+
+Cм. /test/test_app.py. Покрытие тестами 87%:
+
+![Test coverage](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/test_coverage.jpg)
 
 3) Напишите скрипт, который будет делать запросы к вашему сервису (2/2)
 
