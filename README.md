@@ -79,7 +79,7 @@ Cм. /test/test_app.py. Покрытие тестами 87%:
 
 ![Docker build](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_build.jpg)
 
-Запуск контейнера (скриншот немного неправильный, потом поменял host на 0.0.0.0, чтобы заработало):
+Запуск контейнера:
 
 ![Docker run](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_run.jpg)
 
