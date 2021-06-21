@@ -62,7 +62,7 @@ Cм. /test/test_app.py. Покрытие тестами 87%:
 
 #### 4) Сделайте валидацию входных данных (3/3)
 
-См. /validation/validate.py. Пример:
+См. /validation/validate.py. Пример отработавшей валидации:
 
 ![Validation](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/post_predict_validation.jpg)
 
