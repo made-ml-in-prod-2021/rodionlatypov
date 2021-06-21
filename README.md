@@ -105,7 +105,7 @@ Get status запрос к докеру:
 **См. результат здесь:**
 **https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated**
 
-Результат оптимизации:
+Результат оптимизации (сокращение размера больше, чем в 2 раза):
 
 ![Optimised image](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/resized_image.jpg)
 
