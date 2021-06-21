@@ -8,6 +8,11 @@ docker pull rodionlatypov/online-inference:latest
 ```bash
 docker run -p 8000:8000 rodionlatypov/online-inference:latest
 ```
+### Docker build
+```bash
+docker build -t rodionlatypov/online-inference:latest .
+```
+
 ## Project structure
 ------------
 
