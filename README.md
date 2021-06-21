@@ -95,7 +95,14 @@ Get status запрос к докеру:
 
 ![Docker get status](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_get_status.jpg)
 
-#### 6) Оптимизируйте размер docker image (0/3)
+#### 6) Оптимизируйте размер docker image (3/3)
+
+Для того чтобы сократить размер образа, я:
+1) Откатил библиотеки до более старых версий, но так чтобы все необходимые функции в ней были, пришлось помучиться с scikit-learn
+2) Удалил лишние директории, которые не нужны для корректной работы запросов
+3) Поменял FROM python:3.8 на FROM python:3.7-slim-stretch в докерфайле
+
+
 
 #### 7) Опубликуйте образ в https://hub.docker.com/ (2/2)
 
