@@ -35,7 +35,7 @@ docker run -p 8000:8000 rodionlatypov/online-inference
     │
     ├── make_request.py 
     |
-    └──requirements.txt
+    └── requirements.txt
     
 ------------
 ## What was done
