@@ -87,6 +87,10 @@ Predict-запрос к запущенному докеру (IP адрес до�
 
 ![Docker post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_post_predict.jpg)
 
+Get status запрос к докеру:
+
+![Docker get status](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_get_status.jpg)
+
 #### 6) Оптимизируйте размер docker image (0/3)
 
 #### 7) Опубликуйте образ в https://hub.docker.com/ (2/2)
