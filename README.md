@@ -79,7 +79,7 @@ Cм. /test/test_app.py. Покрытие тестами 87%:
 
 ![Docker build](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_build.jpg)
 
-Predict-запрос к докеру (IP адрес докер-машины по дефолту 192.168.99.100). Ответ в формате [{id: , predicted tag:}]:
+Predict-запрос к докеру (IP адрес докер-машины по дефолту 192.168.99.100). Ответ в формате [{id: , predicted target:}]:
 
 ![Docker post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_post_predict.jpg)
 
