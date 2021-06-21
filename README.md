@@ -12,7 +12,7 @@ docker run -p 8000:8000 rodionlatypov/online-inference
 ------------
 
     ├── data
-    │   └──  data.csv              <- Data file for making requests.
+    │   └──  data.csv     
     │   
     ├── entities                   
     |   ├── __init__.py
@@ -20,12 +20,12 @@ docker run -p 8000:8000 rodionlatypov/online-inference
     │   └── response.py
     |
     ├── model                      
-    |   └── model.pkl
+    |   └── model.pkl      
     │
     ├── test                    
-    │   └── test_app.py              
+    │   └── test_app.py             
     │                                     
-    ├── validation                  
+    ├── validation                 
     |   ├── __init__.py
     │   └── validate.py
     │ 
@@ -36,4 +36,5 @@ docker run -p 8000:8000 rodionlatypov/online-inference
     ├── make_request.py 
     |
     └──requirements.txt
+    
 ------------
