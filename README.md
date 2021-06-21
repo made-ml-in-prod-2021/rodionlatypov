@@ -102,8 +102,12 @@ Get status запрос к докеру:
 2) Удалил лишние директории из докерфайла, которые не нужны для корректной работы запросов
 3) Поменял FROM python:3.8 на FROM python:3.7-slim-stretch в докерфайле
 
-См. результат здесь:
-https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated
+**См. результат здесь:**
+**https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated**
+
+Результат оптимизации:
+
+![Optimised image](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/resized_image.jpg)
 
 #### 7) Опубликуйте образ в https://hub.docker.com/ (2/2)
 
