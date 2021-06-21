@@ -87,6 +87,8 @@ Predict-запрос к запущенному докеру (IP адрес до�
 
 ![Docker post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_post_predict.jpg)
 
+Predict-запрос к контейнеру, собранному из уменьшенного (оптимизированного) образа:
+
 ![Docker post predict to minimised image](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/test_to_minimised_image.jpg)
 
 Get status запрос к докеру:
