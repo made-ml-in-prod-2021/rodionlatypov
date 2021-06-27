@@ -1,89 +1,126 @@
-# ML project Homework 1
+# ML Homework 2: online inference
 
-### Train model
-
+### Pulling from DockerHub
 ```bash
-python train_pipeline.py <train-config-path>
+docker pull rodionlatypov/online-inference:latest
 ```
-
-### Predict with model
-
+### Running inference
 ```bash
-python predict_pipeline.py <predict-config-path>
+docker run -p 8000:8000 rodionlatypov/online-inference:latest
 ```
-
+### Docker build
+```bash
+docker build -t rodionlatypov/online-inference:latest .
+```
 
 ## Project structure
 ------------
 
-    ├── configs                        <- Configuration files.
-    │   ├── predict_config.yaml
-    │   └── train_config.yaml
-    │
     ├── data
-    │   ├── data_file.csv              <- Data file.
-    │   ├── make_dataset.py            <- Function for splitting datasets into train and test sets.
-    |   └── __init__.py
-    |
-    ├── entities                       <- Parameters for project modules.
+    │   └──  data.csv     
+    │   
+    ├── entities                   
     |   ├── __init__.py
-    │   ├── feature_params.py
-    │   ├── predict_pipeline_params.py
-    │   ├── split_params.py
-    │   ├── train_params.py
-    │   └── train_pipeline_params.py
+    │   ├── request.py
+    │   └── response.py
     |
-    ├── features                        <- Features transformer.
-    |   ├── __init__.py
-    │   └── build_features.py
-    |
-    ├── logs                           <- Training and prediction log files.
-    |   ├── predict.log
-    │   └── train.log
-    |
-    ├── models                         <- Trained models, model predictions, model metrics.
-    |   ├── __init__.py
-    │   ├── metrics.json
-    |   ├── model.pkl
-    │   ├── model_fit_predict.py
-    │   └── predictions.csv
+    ├── model                      
+    |   └── model.pkl      
     │
-    ├── notebooks                      <- Jupyter notebooks.
-    │   └── Model_HA1.ipynb              
+    ├── test                    
+    │   └── test_app.py             
     │                                     
-    ├── predict_pipeline.py            <- Prediction pipeline.
+    ├── validation                 
+    |   ├── __init__.py
+    │   └── validate.py
+    │ 
+    ├── Dockerfile
+    │
+    ├── app.py 
+    │
+    ├── make_request.py 
     |
-    └── train_pipeline.py              <- Train pipeline.
+    └── requirements.txt
+    
 ------------
+## What was done
 
-Что сделано:
+#### 1) Оберните inference вашей модели в rest сервис (3/3)
 
--2) Назовите ветку homework1 (1/1)
+См. /app.py
 
--1) положите код в папку ml_project
+Пример запроса к сервису, запущенному локально, ответ (предсказания модели) в нижнем правом углу:
 
-0) В описании к пулл реквесту описаны основные "архитектурные" и тактические решения, которые сделаны в вашей работе. В общем, описание что именно вы сделали и для чего, чтобы вашим ревьюерам было легче понять ваш код. (0/2)
+![Post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/post_predict.jpg)
 
-1) Выполнение EDA, закоммитьте ноутбук в папку с ноутбуками (0/2)
+#### 2) Напишите тест для /predict  (3/3)
 
-2) Проект имеет модульную структуру(не все в одном файле =) ) (2/2)
+Cм. /test/test_app.py. Покрытие тестами 87%:
 
-3) использованы логгеры (2/2)
+![Test coverage](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/test_coverage.jpg)
 
-4) написаны тесты на отдельные модули и на прогон всего пайплайна(0/3)
+#### 3) Напишите скрипт, который будет делать запросы к вашему сервису (2/2)
 
-5) Для тестов генерируются синтетические данные, приближенные к реальным (0/3)
+См. make_request.py. Пример:
 
-6) Обучение модели конфигурируется с помощью конфигов в json или yaml, закоммитьте как минимум 2 корректные конфигурации, с помощью которых можно обучить модель (разные модели, стратегии split, preprocessing) (3/3)
+![Make requests](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/requests.jpg)
 
-7) Используются датаклассы для сущностей из конфига, а не голые dict (3/3) 
+#### 4) Сделайте валидацию входных данных (3/3)
 
-8) Используйте кастомный трансформер(написанный своими руками) и протестируйте его(3/3)
+См. /validation/validate.py. Пример работающей валидации:
 
-9) Обучите модель, запишите в readme как это предлагается (3/3)
+![Validation](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/post_predict_validation.jpg)
 
-10) напишите функцию predict, которая примет на вход артефакт/ы от обучения, тестовую выборку(без меток) и запишет предикт, напишите в readme как это сделать (3/3)  
+#### 5) Напишите dockerfile, соберите на его основе образ и запустите локально контейнер (4/4)
 
-13) Проведите самооценку, опишите, в какое колво баллов по вашему мнению стоит оценить вашу работу и почему (1/1) 
+См. /Dockerfile 
 
-Итог: 21 / 30
+Сборка контейнера:
+
+![Docker build](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_build.jpg)
+
+Запуск контейнера:
+
+![Docker run](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_run.jpg)
+
+Predict-запрос к запущенному докеру (IP адрес докер-машины по дефолту 192.168.99.100). Ответ в формате [{id: , predicted target:}]:
+
+![Docker post predict](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_post_predict.jpg)
+
+Predict-запрос к контейнеру, собранному из уменьшенного (оптимизированного) образа:
+
+![Docker post predict to minimised image](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/test_to_minimised_image.jpg)
+
+Get status запрос к докеру:
+
+![Docker get status](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/docker_get_status.jpg)
+
+#### 6) Оптимизируйте размер docker image (3/3)
+
+Для того чтобы сократить размер образа, я:
+1) Откатил библиотеки до более старых версий, но так, чтобы все необходимые функции в ней были, пришлось помучиться с scikit-learn
+2) Удалил лишние директории из докерфайла, которые не нужны для корректной работы запросов
+3) Поменял FROM python:3.8 на FROM python:3.7-slim-stretch в докерфайле
+
+**См. результат здесь:**
+**https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated**
+
+Результат оптимизации (сокращение размера больше, чем в 2 раза):
+
+![Optimised image](https://github.com/made-ml-in-prod-2021/rodionlatypov/blob/homework2/online_inference/pics/resized_image.jpg)
+
+#### 7) Опубликуйте образ в https://hub.docker.com/ (2/2)
+
+https://hub.docker.com/r/rodionlatypov/online-inference/tags?page=1&ordering=last_updated
+
+#### 8) Напишите в readme корректные команды docker pull/run, которые должны привести к тому, что локально поднимется на inference ваша модель (1/1)
+
+```bash
+docker pull rodionlatypov/online-inference:latest
+docker run -p 8000:8000 rodionlatypov/online-inference:latest
+```
+
+#### 9) Проведите самооценку (1/1)
+
+Итог: 22 балла
+
